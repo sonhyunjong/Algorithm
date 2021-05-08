@@ -10,8 +10,7 @@ public class ShootingStar {
 		String star3 = "***";
 		String star2 = "* *";
 		String empty = "   ";
-		
-		List list = new ArrayList<>();
+
 		if(num > 0) {
 			
 			
