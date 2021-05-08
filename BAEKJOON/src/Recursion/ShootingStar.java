@@ -13,7 +13,7 @@ public class ShootingStar {
 
 		if(num > 0) {
 			
-			
+			//추가
 			shootingStar(num-1);
 		}
 	}
