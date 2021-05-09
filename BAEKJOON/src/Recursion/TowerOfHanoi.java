@@ -4,7 +4,20 @@ import java.util.Scanner;
 
 public class TowerOfHanoi {
 	
-	public static void towerOfHanoi(int num) {
+	public static StringBuilder sb = new StringBuilder();
+	
+	public static void towerOfHanoi(int num, int start, int mid, int to) {
+		
+		if(num ==1) {
+			sb.append(start + " " + to + "\n");
+			return;
+		}
+		
+		towerOfHanoi(num-1, start, to , mid);
+		
+		sb.append(start + " " + to + "\n");
+		
+		towerOfHanoi(num-1, mid, start, to);
 		
 	}
 
@@ -16,7 +29,11 @@ public class TowerOfHanoi {
 		Scanner scanner = new Scanner(System.in);
 		int num = scanner.nextInt();
 		
-		towerOfHanoi(num);
+		sb.append((int)(Math.pow(2, num)-1)).append('\n');
+		
+		towerOfHanoi(num, 1, 2, 3);
+		
+		System.out.println(sb);
 	}
 
 }
