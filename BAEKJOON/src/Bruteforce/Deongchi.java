@@ -13,6 +13,7 @@ public class Deongchi {
 		int count = scanner.nextInt();
 		
 		int[][] deongchi = new int[count][2];
+		int level[] = new int[count];
 		
 		for(int i = 0; i < count; i++) {
 			for(int j = 0; j < deongchi[i].length; j++) {
@@ -21,36 +22,16 @@ public class Deongchi {
 		}
 		
 		//덩치 등수 매기기
-		int weight = 0;
-		int height = 0;
-		int[] level = new int[5];
-		int num = 0;
-		
-		for(int j=0;j<count;j++) {
-			
-			for(int i = 0; i < count; i++) {
-				if(weight < deongchi[i][0]) weight = deongchi[i][0];
-				if(height < deongchi[i][1]) height = deongchi[i][1];
-			}
-			
-			for(int i = 0; i < count; i++) {
-				if(weight == deongchi[i][0] && height == deongchi[i][1]) {
-					level[i] = num + 1;
-					deongchi[i][0] = 0;
-					deongchi[i][1] = 0;
-				}else  {
-					level[i] = num + 1;
-					deongchi[i][0] = 0;
-					deongchi[i][1] = 0;
+		for(int i=0;i<deongchi.length;i++) {
+			for(int j=0;j<deongchi.length;j++) {
+				if(deongchi[i][0] > deongchi[j][0] && deongchi[i][1] > deongchi[j][1]) {
+					level[j]++;
 				}
 			}
 		}
-		
-		
 		//출력 
 		for(int i = 0; i<count; i++) {
-			System.out.print(level[i]+" ");
+			System.out.print(level[i]+ 1 +" ");
 		}
 	}
-
 }
