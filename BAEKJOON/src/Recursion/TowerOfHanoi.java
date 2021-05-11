@@ -12,12 +12,14 @@ public class TowerOfHanoi {
 			sb.append(start + " " + to + "\n");
 			return;
 		}
+		// 1. num-1개 1에서 2로 이동()
+		// 2. 1개 1에서 3으로 이동 <>
+		// 3. num-1개 2에서 3으로 이동[]
+		towerOfHanoi(num-1, start, to , mid);//(2,1,3,2)/(1,1,2,3)/[1,2,3,1]
 		
-		towerOfHanoi(num-1, start, to , mid);
+		sb.append(start + " " + to + "\n");//<3,1,2,3>
 		
-		sb.append(start + " " + to + "\n");
-		
-		towerOfHanoi(num-1, mid, start, to);
+		towerOfHanoi(num-1, mid, start, to);//(1,3,1,2)/[2,2,1,3]/[1,1,2,3]
 		
 	}
 
@@ -29,7 +31,7 @@ public class TowerOfHanoi {
 		Scanner scanner = new Scanner(System.in);
 		int num = scanner.nextInt();
 		
-		sb.append((int)(Math.pow(2, num)-1)).append('\n');
+		sb.append((int)(Math.pow(2, num)-1)).append('\n');//2^n-1
 		
 		towerOfHanoi(num, 1, 2, 3);
 		
