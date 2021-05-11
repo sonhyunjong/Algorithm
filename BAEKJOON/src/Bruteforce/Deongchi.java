@@ -18,13 +18,14 @@ public class Deongchi {
 		int level[] = new int[count];
 		String[] sp;
 		
+		//입력
 		for(int i = 0; i < count; i++) {
 			sp = br.readLine().split(" ");			
 			deongchi[i][0] = Integer.parseInt(sp[0]);	 
 			deongchi[i][1] = Integer.parseInt(sp[1]);	
 		}
 		
-		//덩치 등수 매기기
+		//덩치 등수 매기기  -> 나보다 키, 몸무게 작은 사람 +1
 		for(int i=0;i<deongchi.length;i++) {
 			for(int j=0;j<deongchi.length;j++) {
 				if(deongchi[i][0] > deongchi[j][0] && deongchi[i][1] > deongchi[j][1]) {
@@ -36,5 +37,7 @@ public class Deongchi {
 		for(int i = 0; i<count; i++) {
 			System.out.print(level[i]+ 1 +" ");
 		}
+		
+		br.close();
 	}
 }
