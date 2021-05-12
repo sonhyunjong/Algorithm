@@ -25,8 +25,8 @@ public class Chessboard {
 			WB[0] = WB[1];
 			WB[1] = tempWB;
 		}
-		count = Math.min(count, 64 - count); //최대 64
-		min = Math.min(min, count);
+		count = Math.min(count, 64 - count); //첫번째가 W인 값과 B인 값의 최소 count 찾기 (최대 64)
+		min = Math.min(min, count);// 8*8 체스판 중 count가 최소인 값 
 	}
 
 	public static void main(String[] args) throws IOException {
