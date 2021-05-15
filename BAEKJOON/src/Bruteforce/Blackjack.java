@@ -3,6 +3,9 @@ package Bruteforce;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Blackjack {
@@ -18,11 +21,27 @@ public class Blackjack {
 		
 		int count = Integer.parseInt(sp[0]);
 		int max = Integer.parseInt(sp[1]);
-		int[] num = new int[count];
+		List<Integer> num = new ArrayList<Integer>();
 		sp = br.readLine().split(" ");
 		
 		for(int i = 0; i<count; i++) {
-			num[i] =  Integer.parseInt(sp[i]);
+			num.add(Integer.parseInt(sp[i]));
 		}
+		
+		// 
+		int result =0;
+		for(int i =0; i<count-2; i++) {
+			for(int j = i+1; j<count-1; j++) {
+				for(int k = j+1; k<count; k++) {
+					if(num.get(i)+num.get(j)+num.get(k)<=max && num.get(i)+num.get(j)+num.get(k)>result) {
+						result = num.get(i)+num.get(j)+num.get(k);
+					}
+				}
+			}
+		}
+	
+		//출력
+		System.out.println(result);
+		br.close();
 	}
 }
