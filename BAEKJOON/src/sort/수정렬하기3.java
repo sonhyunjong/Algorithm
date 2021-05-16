@@ -17,7 +17,7 @@ public class 수정렬하기3 {
 		StringBuilder sb = new StringBuilder();
 		
 		int count = Integer.parseInt(br.readLine());
-		int[] num = new int[10001];
+		int[] num = new int[10000001];
 		int index = 0;
 		
 		for(int i = 0; i<count; i++) {
