@@ -38,9 +38,7 @@ public class 좌표정렬하기 {
 				}else {
 					return o1[0] - o2[0];
 				}
-				
 			}
-			
 		});
 		
 		//출력
