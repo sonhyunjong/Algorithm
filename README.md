@@ -75,32 +75,32 @@
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-1. Comparable
+<h4>1. Comparable</h4>
 
-java.lang package
-객체의 정렬기준을 정해줄 때 사용한다.
-Comparable 인터페이스의 구현체는 compareTo메서드를 구현해야 한다.
+  java.lang package<br>
+  객체의 정렬기준을 정해줄 때 사용한다.<br>
+  Comparable 인터페이스의 구현체는 compareTo메서드를 구현해야 한다.<br>
 
-```
-package java.lang;
-public interface Comparable<T> {
-  public int compareTo(T o); }
-```
+  ```
+  package java.lang;
+  public interface Comparable<T> {
+    public int compareTo(T o); }
+  ```
 
 
-2. Comparator
+<h4>2. Comparator</h4>
 
-java.util package
-이미 정해진 정렬기준 외 다른 정렬기준을 사용하고 싶을때 사용한다.
-Comparator 인터페이스의 구현체는 compare메서드를 구현해야 한다.
-Comparator 인터페이스의 구현체는 그 자체가 정렬자로 사용된다. (정렬기준)
+  java.util package<br>
+  이미 정해진 정렬기준 외 다른 정렬기준을 사용하고 싶을때 사용한다.<br>
+  Comparator 인터페이스의 구현체는 compare메서드를 구현해야 한다.<br>
+  Comparator 인터페이스의 구현체는 그 자체가 정렬자로 사용된다. (정렬기준)<br>
 
-```
-package java.util;
-@FunctionalInterface 
-public interface Comparator<T> {
-  int compare(T o1, T o2); boolean equals(Object obj); 
-}
-```
+  ```
+  package java.util;
+  @FunctionalInterface 
+  public interface Comparator<T> {
+    int compare(T o1, T o2); boolean equals(Object obj); 
+  }
+  ```
 
 
