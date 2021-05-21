@@ -74,4 +74,15 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-compare/ compareTo
+
+Comparable - 이 인터페이스를 구현한 객체 스스로에게 부여하는 한 가지 기본 정렬 규칙을 설정하는 목적으로 사용한다.
+```
+public interface Comparable<T> { public int compareTo(T o); }
+```
+
+
+Comparator - 이 인터페이스를 구현한 클래스는 정렬 규칙 그 자체를 의미하며, 기본 정렬 규칙과 다르게 원하는대로 정렬순서를 지정하고 싶을 때 사용한다.
+```
+@FunctionalInterface public interface Comparator<T> { int compare(T o1, T o2); boolean equals(Object obj); }
+```
+
