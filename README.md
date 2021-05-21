@@ -86,6 +86,50 @@
   public interface Comparable<T> {
     public int compareTo(T o); }
   ```
+  
+ ```
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.List;
+
+    class Student implements Comparable{
+        int score;
+        String name;
+
+        Student (int score, String name) {
+            this.score = score;
+            this.name = name;
+        }
+
+        public int compareTo(Object obj){
+            Student s2 = (Student)obj;
+
+            return s2.score - this.score;
+        }
+
+        public String toString(){
+            return score + "," + name;
+        }
+    }
+
+    public class ComparableTest {
+        public static void main(String[] args) {
+            List<Student> list = new ArrayList<>();
+            list.add(new Student(20,"lee"));
+            list.add(new Student(15,"choi"));
+            list.add(new Student(9,"kim"));
+            list.add(new Student(12,"park"));
+
+            Collections.sort(list);
+
+            for (Student s : list) {
+                System.out.println(s.score);
+            }
+        }
+    }
+
+```
+
 
 
 <h4>2. Comparator</h4>
@@ -95,12 +139,75 @@
   Comparator 인터페이스의 구현체는 compare메서드를 구현해야 한다.<br>
   Comparator 인터페이스의 구현체는 그 자체가 정렬자로 사용된다. (정렬기준)<br>
 
-  ```
+```
   package java.util;
   @FunctionalInterface 
   public interface Comparator<T> {
-    int compare(T o1, T o2); boolean equals(Object obj); 
+   int compare(T o1, T o2); boolean equals(Object obj); 
   }
-  ```
+```
+  
+```  
+  import java.util.ArrayList;
+  import java.util.Collections;
+  import java.util.Comparator;
+  import java.util.List;
+
+  class Student implements Comparable{
+      int score;
+      String name;
+
+      Student (int score, String name) {
+          this.score = score;
+          this.name = name;
+      }
+
+      public int compareTo(Object obj){
+          Student s2 = (Student)obj;
+
+          return s2.score - this.score;
+      }
+
+      public String toString(){
+          return score + "," + name;
+      }
+  }
+
+  public class ComparableTest {
+      public static void main(String[] args) {
+          List<Student> list = new ArrayList<>();
+          list.add(new Student(20,"lee"));
+          list.add(new Student(15,"choi"));
+          list.add(new Student(9,"kim"));
+          list.add(new Student(12,"park"));
+
+          Collections.sort(list, new Comparator<Student>() {
+              @Override
+              public int compare(Student s1, Student s2) {
+                  if (s1.score < s2.score) {
+                      return -1;
+                  } else if (s1.score > s2.score) {
+                      return 1;
+                  }
+                  return 0;
+              }
+          });
+
+
+          for (Student s : list) {
+              System.out.println(s.score);
+          }
+      }
+  }
+```
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+<h4>1. Array.sort()</h4>
+내림차순 : Array.sort(str,Collections.reverseOrder())
+
+
+<h4>2. Collections.sort()</h4>
+내림차순 : Collections.reverse()
+
 
 
