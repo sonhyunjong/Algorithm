@@ -67,7 +67,7 @@
 
 제네릭 컬렉션
 1. vector<>
-2. ArrayList<> : vector<>와 비슷. 다수의 스레드가 동시에 ArrayList에 요소를 삽입하거나 삭제할 때 출동이 발생
+2. ArrayList<> : vector<>와 비슷. 다수의 스레드가 동시에 ArrayList에 요소를 삽입하거나 삭제할 때 충돌이 발생
 3. HashMap<K, V>
 4. HashSet<> : 순서 X, 중복 X
 5. LinkedList<>
