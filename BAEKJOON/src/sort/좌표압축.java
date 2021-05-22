@@ -34,7 +34,7 @@ public class 좌표압축 {
 		Collections.sort(clone);
 		
 		for(int i=0; i<N; i++) {
-			sb.append(clone.indexOf(list.get(i))+" ");
+			sb.append(Collections.binarySearch(clone, list.get(i))+" ");
 		}
 		
 		bw.write(sb.toString());

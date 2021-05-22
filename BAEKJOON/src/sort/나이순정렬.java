@@ -40,12 +40,7 @@ public class 나이순정렬 {
 			public int compare(String o1, String o2) {
 				String[] o1Arr = o1.split(" ");
 				String[] o2Arr = o2.split(" ");
-
-				if(Integer.parseInt(o1Arr[0])==Integer.parseInt(o2Arr[0])) {
-					o1Arr[1].compareTo(o2Arr[1]);
-					return 0;
-				}
-				else return Integer.parseInt(o1Arr[0])-Integer.parseInt(o2Arr[0]);
+				return Integer.parseInt(o1Arr[0])-Integer.parseInt(o2Arr[0]);
 			}
 		});
 		
