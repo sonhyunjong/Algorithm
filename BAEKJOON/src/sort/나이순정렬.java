@@ -6,11 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class 나이순정렬 {
 
@@ -41,7 +39,7 @@ public class 나이순정렬 {
 			@Override
 			public int compare(String o1, String o2) {
 				String[] o1Arr = o1.split(" ");
-				String[] o2Arr = o1.split(" ");
+				String[] o2Arr = o2.split(" ");
 
 				if(Integer.parseInt(o1Arr[0])==Integer.parseInt(o2Arr[0])) {
 					o1Arr[1].compareTo(o2Arr[1]);
@@ -61,5 +59,4 @@ public class 나이순정렬 {
 		bw.close();
 	
 	}
-
 }
