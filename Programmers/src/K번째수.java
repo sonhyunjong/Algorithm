@@ -11,9 +11,9 @@ class Solution {
             for(int i=commands[j][0]-1; i<commands[j][1]; i++){
                 list.add(array[i]);
             }
-            Collections.sort(list);
+            Collections.sort(list);	//리스트로 소트
             answer[j] = list.get(commands[j][2]-1);
-            list.clear();	//리스트 비우기
+            list.clear();	//리스트 비우기 
         }
         return answer;
     }
