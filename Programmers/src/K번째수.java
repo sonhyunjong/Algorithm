@@ -14,10 +14,14 @@ class Solution {
             Collections.sort(list);	//리스트로 소트
             answer[j] = list.get(commands[j][2]-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
             list.clear();	//리스트 비우기 
 =======
             list.clear();
 >>>>>>> parent of 5b70470 (//)
+=======
+            list.clear();	//리스트 비우기 
+>>>>>>> 80bb876215430e5719e91601666261b6888dba0a
         }
         return answer;
     }
