@@ -13,7 +13,7 @@ class Solution {
             }
             Collections.sort(list);
             answer[j] = list.get(commands[j][2]-1);
-            list.clear();
+            list.clear();	//리스트 비우기
         }
         return answer;
     }
