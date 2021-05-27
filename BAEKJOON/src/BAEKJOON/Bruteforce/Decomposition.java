@@ -1,4 +1,4 @@
-package Bruteforce;
+package BAEKJOON.Bruteforce;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
