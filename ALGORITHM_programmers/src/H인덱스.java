@@ -1,18 +1,15 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 class Solution2 {
     public int solution2(int[] citations) {
-
-        List<Integer> list = new ArrayList<Integer>();
+       int answer = 0;
+       Arrays.sort(citations);
         
-        for(int i=0; i<citations.length; i++) {
-        	list.add(citations[i]);
+        for(int i=citations.length-1; i>=0; i--){
+            if(citations[i]>answer)answer++;
+            else break;
         }
-        Collections.sort(list);
-        
-        return list.get(list.size()/2);
+        return answer;
     }
 }
 public class H인덱스 {
