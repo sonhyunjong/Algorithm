@@ -22,6 +22,7 @@ public class 파도반수열 {
 		StringBuilder sb = new StringBuilder();
 		
 		int T = Integer.parseInt(br.readLine());
+	
 		N[0]=0L;
 		N[1]=1L;
 		N[2]=1L;
