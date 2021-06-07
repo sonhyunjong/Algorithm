@@ -35,7 +35,7 @@ public class 전깃줄 {
 			w[i][1] = Integer.parseInt(st.nextToken());
 		}
 		
-		Arrays.sort(w, new Comparator<int[]>() { 	//A 기준 정렬 
+		Arrays.sort(w, new Comparator<int[]>() { 	//A 기준 정렬
 			@Override
 			public int compare(int[] o1, int[] o2) {
 				return o1[0] - o2[0];
