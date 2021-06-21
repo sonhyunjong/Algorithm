@@ -5,25 +5,34 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 색종이만들기 {
+public class 종이의개수 {
 	static int[][] arr;
-	static int[] count = new int[2];
+	static int[] count = new int[3];
 	
-	static void divide(int n, int x, int y) {
-        for (int i = y; i < y + n; i++) {
+	public static void divide(int n, int x, int y) {
+		for (int i = y; i < y + n; i++) {
             for (int j = x; j < x + n; j++) {
                 if (arr[i][j] != arr[y][x]) {
-                    divide(n / 2, x, y);
-                    divide(n / 2, x, y + n / 2);
-                    divide(n / 2, x + n / 2, y);
-                    divide(n / 2, x + n / 2,  y + n / 2);
+                	
+                	divide(n/3, x, y); 
+                	divide(n/3, x+n/3, y); 
+                	divide(n/3, x+(n/3)*2, y); 
+                	
+                	divide(n/3, x, y+n/3);
+                	divide(n/3, x+n/3, y+n/3); 
+                	divide(n/3, x+(n/3)*2, y+n/3); 
+                	
+                	divide(n/3, x, y+(n/3)*2); 
+                	divide(n/3, x+n/3, y+(n/3)*2); 
+                	divide(n/3, x+(n/3)*2, y+(n/3)*2); 
+                	
                     return;
                 }
              }
-        }
-        count[arr[y][x]]++;
-    }
-
+        } 
+		count[arr[y][x]+1]++;
+	}
+	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
@@ -37,12 +46,9 @@ public class 색종이만들기 {
 				arr[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
+		
 		divide(N, 0, 0);
 		
-		for(int i=0; i<2; i++) {
-			System.out.println(count[i]);
-		} 
-		br.close();
+		System.out.println(count[0] + "\n" + count[1] + "\n" + count[2]);
 	}
-
 }
