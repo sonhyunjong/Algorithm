@@ -26,6 +26,7 @@ public class 행렬제곱 {
 		
 	}
 
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
